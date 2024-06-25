@@ -1,0 +1,64 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+    <div class="form-container">
+        <form action="/submit" method="POST">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required><br><br>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required><br><br>
+
+            <label for="captcha">Captcha: What is {{ num1 }} + {{ num2 }}?</label>
+            <input type="text" id="captcha" name="captcha" required><br><br>
+
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+</body>
+
+</html> -->
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Captcha Form</title>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Login Form</h2>
+        <form method="POST" action="/">
+            <label for="username">Username:</label><br>
+            <input type="text" id="username" name="username" required><br><br>
+
+            <label for="password">Password:</label><br>
+            <input type="password" id="password" name="password" required><br><br>
+
+            <label for="captcha">Captcha: {{ captcha }}</label><br>
+            <input type="text" id="captcha" name="captcha" required><br><br>
+            <input type="hidden" name="captcha_result" value="{{ result }}">
+
+            <button type="submit">Login</button>
+        </form>
+    </div>
+</body>
+
+</html>
